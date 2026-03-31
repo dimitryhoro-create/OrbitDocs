@@ -28,7 +28,7 @@ Portal provides a robust toolset for integrating key features such as in-game pu
 
 6. **Are there any specific resolution or aspect ratio requirements?**  
 
-    No. Only general requirements for mobile games (portrait and/or landscape) and requirements  
+    No. Only general requirements for mobile games (portrait and/or landscape).  
 
 7. **Can we use external APIs for in-game functionalities like leaderboards or matchmaking?** 
 
@@ -37,7 +37,3 @@ Portal provides a robust toolset for integrating key features such as in-game pu
 8. **Are there any restrictions on background network requests?**  
 
     No.   
-
-9. **Can we use external APIs for in-game functionalities like leaderboards or matchmaking?**
-
-    Yes  

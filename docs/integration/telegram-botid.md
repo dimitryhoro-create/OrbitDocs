@@ -16,11 +16,13 @@ Open the side menu and navigate to Settings > Advanced
 
 ![img](images/telegram-botid/2.png)
 
+![img](images/telegram-botid/3.png)
+
 #### 3. Step: Scroll down the opened menu and click the Experimental settings button
 
 Scroll down the opened menu and click the Experimental settings button.
 
-![img](images/telegram-botid/2.png)
+![img](images/telegram-botid/6.png)
 
 #### 4. Step: Enable the option "Show Peer ID's in Profile"
 
