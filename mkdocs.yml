@@ -30,6 +30,9 @@ plugins:
   - search
   - awesome-pages
 markdown_extensions:
+  - toc:
+      permalink: true       # Позволяет копировать ссылки на заголовки
+      toc_depth: 3          # Увеличиваем глубину (до h3)
   - attr_list
   - md_in_html
   - def_list

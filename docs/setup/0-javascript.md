@@ -16,19 +16,6 @@ Call the initialization functions at the start of your application:
 await window.PortalSDK.initialize();
 ```
 
-You can also pass configuration options to control SDK behavior:
-
-=== "JavaScript"
-```JS
-await window.PortalSDK.initialize(undefined, {
-  disable_startup_ads: true,
-});
-```
-
-**Configuration Options:**
-
-- `disable_startup_ads` - When set to `true`, prevents ads from automatically displaying at game startup. Useful for games that want full control over when ads are shown.
-
 #### 2.1. Bot ID Parameter
 
 The `initialize()` method also accepts a `botId` as the first parameter:

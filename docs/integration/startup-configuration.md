@@ -48,4 +48,16 @@ You need to reset `localStorage` for that. Please refer to [how to enable dev to
 
 *Enabled fullscreen*
 
+## Startup Ads Control
+You can also pass configuration options to control SDK behavior:
+
+=== "JavaScript"
+```JS
+await window.PortalSDK.initialize(undefined, {
+  disable_startup_ads: true,
+});
+```
+**Configuration Options:**
+
+- `disable_startup_ads` - When set to `true`, prevents ads from automatically displaying at game startup. Useful for games that want full control over when ads are shown.
 
