@@ -18,17 +18,11 @@ To populate or modify your shop, use the control buttons in the top-right corner
     *   **ID**: A unique identifier (must match the ID used in your game code).
     *   **Name & Description**: Internal metadata for your convenience. **Note:** This information is only visible in the Admin Console and is not displayed to players.
     *   **Price**: The cost of the item.
-*   **Batch Update**: Allows for bulk management. It opens an editor where you can update the entire catalog at once using a JSON configuration. This is the most efficient way to sync large inventories or perform global price changes.
+*   **Batch Update**: For bulk operations with game items, use the **Batch Update** feature:
+    - The system uses **CSV files** for bulk operations.
 
-### Item Actions
-
-Each item in the list has individual controls in the **Actions** column:
-
-*   **Edit (Yellow Icon)**: Modify the properties of an existing item.
-*   **Delete (Red Icon)**: Remove the item from the store.
-
-!!! danger "Important: ID Consistency"
-    The **ID** is a permanent identifier. Deleting or changing an ID for an item that is already live in your game code will cause purchase errors. Always ensure your backend or game client refers to the exact ID specified here.
+    - You will find detailed **CSV format** requirements and a data example directly on the **Batch Update** page
+![img](images/game-and-iap/4.png)
 
 ## How to use Shop API
 

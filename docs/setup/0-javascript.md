@@ -4,7 +4,7 @@
 
 === "HTML"
 ```HTML
-<script src="https://storage.googleapis.com/social-networth/scripts/sdk.umd.js"></script>
+<script src="https://sdk.portalapp.games/sdk.umd.js"></script>
 ```
 
 

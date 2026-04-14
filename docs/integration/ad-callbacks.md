@@ -11,6 +11,25 @@ The SDK provides two callback properties for tracking the advertisement lifecycl
 * **Signature:** `PortalSDK.onAdStart = () => void`
 * **Parameters:** None.  
 * **Usage Example:**
+=== "Unity"
+	```C#
+    PortalSDK.SetOnAdStart(OnAdStart);
+
+    [MonoPInvokeCallback(typeof(object))]
+    private static void OnAdStart(bool _)
+    {
+    Debug.Log($"[PortalSDK] OnAdStart");
+    }
+	```
+
+=== "Defold"
+	```LUA
+    print("Test: SetOnAdStart()")
+    portalsdk.set_on_ad_start(function(self, success)
+    print("OnAdStart: " .. tostring(success))
+    end)
+	```
+
 === "JavaScript"
     ```js
     PortalSDK.onAdStart = function() {  
@@ -27,6 +46,25 @@ The SDK provides two callback properties for tracking the advertisement lifecycl
 * **Parameters:**  
   * result (boolean) — true if the ad was shown successfully, false if the ad was not shown (e.g., `error`, `cooldown`, `ads_free`, etc.).  
 * **Usage Example:**
+=== "Unity"
+	```C#
+    PortalSDK.SetOnAdEnd(OnAdEnd);
+
+    [MonoPInvokeCallback(typeof(object))]
+    private static void OnAdEnd(bool success)
+    {
+    Debug.Log($"[PortalSDK] OnAdEnd {success}");
+    }
+	```
+
+=== "Defold"
+	```LUA
+    print("Test: SetOnAdEnd()")
+    portalsdk.set_on_ad_end(function(self, success)
+    print("OnAdEnd: " .. tostring(success))
+    end)
+	```
+
 === "JavaScript"
     ```js
     PortalSDK.onAdEnd = function(success) {  
@@ -42,6 +80,18 @@ The SDK provides two callback properties for tracking the advertisement lifecycl
 ### **Disabling Callbacks**
 
 To disable a callback, set its value to null:
+
+=== "Unity"
+	```C#
+    PortalSDK.ClearOnAdStart();
+    PortalSDK.ClearOnAdEnd();
+	```
+
+=== "Defold"
+	```LUA
+    portalsdk.clear_on_ad_start()
+    portalsdk.clear_on_ad_end()
+	```
 
 === "JavaScript"
     ```js

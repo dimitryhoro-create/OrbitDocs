@@ -13,7 +13,7 @@
 [project]
 title = TestGame
 version = 1.0
-dependencies#0 = https://github.com/orbit-software/portalsdk-defold/archive/refs/tags/v0.1.7.zip
+dependencies#0 = https://github.com/orbit-software/portalsdk-defold/archive/refs/tags/v0.1.9.zip
 ```
 #### 3. Set a template for HTML5 export
 

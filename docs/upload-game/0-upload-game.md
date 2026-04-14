@@ -11,4 +11,4 @@ Simply push your game's build files into the designated `/public/` directory.
 #### 2. Push your build files into `/public/` directory
 ![Описание изображения](images/upload-game/2.png)
 #### 3. After a few minutes your game can be accessed in the Portal. 
-![Описание изображения](images/upload-game/3.png)
+![Описание изображения](images/upload-game/3.png){width="400px"}
