@@ -41,3 +41,8 @@ This setting controls the game's visibility and publication status within Portal
 #### 3. Media: screenshots, image, avatars, ...
 
 ![img](images/admin-panel/7.png) 
+
+#### How to Add Wallet API
+
+!!! info ""
+    Detailed guide on handling player balances, charging, and depositing coins via Wallet API: [In-game purchases](/integration/wallet_api)
