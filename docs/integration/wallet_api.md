@@ -21,8 +21,8 @@
 Every request to the Wallet API endpoints must include game_id and user_id in the JSON body, along with any endpoint-specific parameters (e.g., amount).
 ``` JSON
 {
-  "game_id": 328,
-  "user_id": 269203607
+  "game_id": 777,
+  "user_id": 123456789
 }
 ```
 !!! attention
@@ -62,8 +62,8 @@ X-Signature: <calculated_hmac_sha256_hex_signature>
 #### Example Request Body
 ``` JSON
 {
-  "game_id": 328,
-  "user_id": 269203607
+  "game_id": 777,
+  "user_id": 123456789
 }
 ```
 #### Available endpoints
