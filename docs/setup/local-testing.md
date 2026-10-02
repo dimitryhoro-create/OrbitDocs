@@ -53,14 +53,14 @@ Your initialization code currently looks like this:
 
 ```js
 (async function () {
-  await window.PortalSDK.initialize();
-  window.PortalSDK.initializeOverlay();
+  await window.PortalSDK.initialize(8433755170);
+  window.PortalSDK.initializeOverlay({ botId: 8433755170 });
 })();
 ```
 
 **Modified Code for Local Testing**
 
-Change it to include the `botId` and `authData`:
+Change it to add the `authData` from Step 1:
 
 ```js
 (async function () {
@@ -70,7 +70,7 @@ Change it to include the `botId` and `authData`:
       authData: 'user=%7B%22id%22%3A122374628%2C%22first_n...'
     }
   );
-  window.PortalSDK.initializeOverlay();
+  window.PortalSDK.initializeOverlay({ botId: 8433755170 });
 })();
 ```
 
@@ -110,12 +110,12 @@ Change the code back to:
 
 ```js
 (async function () {
-  await window.PortalSDK.initialize();
-  window.PortalSDK.initializeOverlay();
+  await window.PortalSDK.initialize(8433755170);
+  window.PortalSDK.initializeOverlay({ botId: 8433755170 });
 })();
 ```
 
-Remove the `botId` and `authData` parameters. If you forget this step, your game **WILL NOT work correctly** in production.
+Remove the `authData` parameter only - **keep the `botId`**, production needs it. If you leave `authData` in, your game **WILL NOT work correctly** in production.
 
 ### Troubleshooting
 

@@ -1016,6 +1016,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../integration/promo-codes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Promo codes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../integration/safe-area-guide/" class="md-nav__link">
         
   
@@ -1397,20 +1425,20 @@
 <p><strong>Original Code</strong></p>
 <p>Your initialization code currently looks like this:</p>
 <div class="language-js highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="p">(</span><span class="k">async</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">  </span><span class="k">await</span><span class="w"> </span><span class="nb">window</span><span class="p">.</span><span class="nx">PortalSDK</span><span class="p">.</span><span class="nx">initialize</span><span class="p">();</span>
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">  </span><span class="nb">window</span><span class="p">.</span><span class="nx">PortalSDK</span><span class="p">.</span><span class="nx">initializeOverlay</span><span class="p">();</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">  </span><span class="k">await</span><span class="w"> </span><span class="nb">window</span><span class="p">.</span><span class="nx">PortalSDK</span><span class="p">.</span><span class="nx">initialize</span><span class="p">(</span><span class="mf">8433755170</span><span class="p">);</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">  </span><span class="nb">window</span><span class="p">.</span><span class="nx">PortalSDK</span><span class="p">.</span><span class="nx">initializeOverlay</span><span class="p">({</span><span class="w"> </span><span class="nx">botId</span><span class="o">:</span><span class="w"> </span><span class="mf">8433755170</span><span class="w"> </span><span class="p">});</span>
 </span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="p">})();</span>
 </span></code></pre></div>
 <p><strong>Modified Code for Local Testing</strong></p>
-<p>Change it to include the <code>botId</code> and <code>authData</code>:</p>
+<p>Change it to add the <code>authData</code> from Step 1:</p>
 <div class="language-js highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="p">(</span><span class="k">async</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">  </span><span class="k">await</span><span class="w"> </span><span class="nb">window</span><span class="p">.</span><span class="nx">PortalSDK</span><span class="p">.</span><span class="nx">initialize</span><span class="p">(</span>
 </span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">    </span><span class="mf">8433755170</span><span class="p">,</span>
 </span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">    </span><span class="p">{</span>
-</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">      </span><span class="nx">authData</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;user=%7B%22id%22%3A122374628%2C%22first_n...&#39;</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">      </span><span class="nx">authData</span><span class="o">:</span><span class="w"> </span><span class="s1">'user=%7B%22id%22%3A122374628%2C%22first_n...'</span>
 </span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">    </span><span class="p">}</span>
 </span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">  </span><span class="p">);</span>
-</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">  </span><span class="nb">window</span><span class="p">.</span><span class="nx">PortalSDK</span><span class="p">.</span><span class="nx">initializeOverlay</span><span class="p">();</span>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">  </span><span class="nb">window</span><span class="p">.</span><span class="nx">PortalSDK</span><span class="p">.</span><span class="nx">initializeOverlay</span><span class="p">({</span><span class="w"> </span><span class="nx">botId</span><span class="o">:</span><span class="w"> </span><span class="mf">8433755170</span><span class="w"> </span><span class="p">});</span>
 </span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="p">})();</span>
 </span></code></pre></div>
 <p>Replace:
@@ -1447,11 +1475,11 @@
 </div>
 <p>Change the code back to:</p>
 <div class="language-js highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="p">(</span><span class="k">async</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">  </span><span class="k">await</span><span class="w"> </span><span class="nb">window</span><span class="p">.</span><span class="nx">PortalSDK</span><span class="p">.</span><span class="nx">initialize</span><span class="p">();</span>
-</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">  </span><span class="nb">window</span><span class="p">.</span><span class="nx">PortalSDK</span><span class="p">.</span><span class="nx">initializeOverlay</span><span class="p">();</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">  </span><span class="k">await</span><span class="w"> </span><span class="nb">window</span><span class="p">.</span><span class="nx">PortalSDK</span><span class="p">.</span><span class="nx">initialize</span><span class="p">(</span><span class="mf">8433755170</span><span class="p">);</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">  </span><span class="nb">window</span><span class="p">.</span><span class="nx">PortalSDK</span><span class="p">.</span><span class="nx">initializeOverlay</span><span class="p">({</span><span class="w"> </span><span class="nx">botId</span><span class="o">:</span><span class="w"> </span><span class="mf">8433755170</span><span class="w"> </span><span class="p">});</span>
 </span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="p">})();</span>
 </span></code></pre></div>
-<p>Remove the <code>botId</code> and <code>authData</code> parameters. If you forget this step, your game <strong>WILL NOT work correctly</strong> in production.</p>
+<p>Remove the <code>authData</code> parameter only - <strong>keep the <code>botId</code></strong>, production needs it. If you leave <code>authData</code> in, your game <strong>WILL NOT work correctly</strong> in production.</p>
 <h3 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h3>
 <p>If local testing isn't working:</p>
 <ol>

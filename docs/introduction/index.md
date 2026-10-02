@@ -12,7 +12,7 @@ Portal provides a robust toolset for integrating key features such as in-game pu
 
 2. **Can ads be blocked in Telegram mini-apps?**  
 
-    No, ad blockers for mini-apps doesn't exist. 
+    Yes. Browser extensions do not run inside the Telegram app, but blockers that work at the network level do: Private DNS on Android, VPN-based blocker apps such as AdGuard or Blokada, DNS profiles on iOS, and filtering DNS on a router. On Telegram Web and in a regular browser, ad-blocking extensions work as well. A blocked ad fails like any other ad: `requestRewardAd()` returns `false`, so the game must not depend on an ad being shown to let the player continue.
 
 3. **Can we use our own Telegram mini-app in Portal?**
 

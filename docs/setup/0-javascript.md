@@ -13,23 +13,25 @@ Call the initialization functions at the start of your application:
 
 === "JavaScript"
 ```JS
-await window.PortalSDK.initialize();
+await window.PortalSDK.initialize(34398689);
 ```
 
 #### 2.1. Bot ID Parameter
 
-The `initialize()` method also accepts a `botId` as the first parameter:
+The `initialize()` method takes your game's `botId` as the first parameter:
 
 === "JavaScript"
 ```JS
 await window.PortalSDK.initialize(34398689);
 ```
 
-**When do you need to specify botId?**
+**The botId is required.**
 
-The `botId` parameter is **not necessary** if you're using our [hosting and upload process](/upload-game/0-upload-game/). However, if you're hosting the game on your own server (which we don't recommend), you **must** add the `botId` parameter - it's important for authentication.
+Pass it on our [hosting](/upload-game/0-upload-game/) and on any other host - the hosting does not supply it for you. Without it we cannot verify who is calling, so every ad request your game makes stays unverified.
 
-To find your game's bot ID, see [How to find your game bot ID](/integration/telegram-botid/).
+The `botId` is the numeric ID of the Telegram bot your game runs under. It is **not** `window.game_id`, which is the Admin Console game ID the SDK uses as the ad zone - these are different numbers, and one does not stand in for the other.
+
+Replace `34398689` with your own bot ID. To find it, see [How to find your game bot ID](/integration/telegram-botid/).
 
 #### 2.2. Initialize Overlay
 
@@ -37,8 +39,10 @@ Initialize overlay with default options or with [startup configuration](/integra
 
 === "JavaScript"
 ```JS
-window.PortalSDK.initializeOverlay();
+window.PortalSDK.initializeOverlay({ botId: 34398689 });
 ```
+
+Pass the **same** `botId` you passed to `initialize()`. Two different IDs is a conflict that stops ad delivery altogether - worse than passing none.
 
 
 #### 3. Call game-ready event  

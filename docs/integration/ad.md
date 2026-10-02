@@ -7,10 +7,12 @@ By default, ads may be shown automatically when your game starts. To disable thi
 === "JavaScript"
 
 	```JS
-	await window.PortalSDK.initialize(undefined, {
+	await window.PortalSDK.initialize(34398689, {
 	  disable_startup_ads: true,
 	});
 	```
+
+The first parameter is your game's `botId` and is required - never pass `undefined` there, or the ad request cannot be verified. Replace `34398689` with your own bot ID, see [How to find your game bot ID](/integration/telegram-botid/).
 
 ### Interstitial ads
 Interstitial ads are used to display video ads and should be triggered on natural breaks in your game.

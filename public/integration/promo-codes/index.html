@@ -30,13 +30,13 @@
       
       
       
-        <link rel="canonical" href="https://docs.portalapp.games/integration/iap-validation/">
+        <link rel="canonical" href="https://docs.portalapp.games/integration/promo-codes/">
       
       
-        <link rel="prev" href="../filter-telegram-logs/">
+        <link rel="prev" href="../persistent-game-state/">
       
       
-        <link rel="next" href="../iap/">
+        <link rel="next" href="../safe-area-guide/">
       
       
         
@@ -47,7 +47,7 @@
     
     
       
-        <title>IAP Server Validation - Orbit Platform Documentation</title>
+        <title>Promo codes - Orbit Platform Documentation</title>
       
     
     
@@ -103,7 +103,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#iap-server-validation" class="md-skip">
+        <a href="#promo-codes" class="md-skip">
           Skip to content
         </a>
       
@@ -160,7 +160,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              IAP Server Validation
+              Promo codes
             
           </span>
         </div>
@@ -821,37 +821,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    IAP Server Validation
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../iap-validation/" class="md-nav__link">
         
   
   
@@ -867,59 +840,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#1-configuration" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        1. Configuration
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-webhook-specification" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        2. Webhook specification
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3-reference-implementation-go" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3. Reference Implementation (Go)
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1013,10 +933,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../promo-codes/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Promo codes
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1032,6 +979,59 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#how-it-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How it works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Integration
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Testing
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1326,10 +1326,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-configuration" class="md-nav__link">
+  <a href="#how-it-works" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. Configuration
+        How it works
       
     </span>
   </a>
@@ -1337,10 +1337,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-webhook-specification" class="md-nav__link">
+  <a href="#integration" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. Webhook specification
+        Integration
       
     </span>
   </a>
@@ -1348,10 +1348,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-reference-implementation-go" class="md-nav__link">
+  <a href="#testing" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3. Reference Implementation (Go)
+        Testing
       
     </span>
   </a>
@@ -1381,73 +1381,115 @@
 
 
 
-<h1 id="iap-server-validation">IAP Server Validation<a class="headerlink" href="#iap-server-validation" title="Permanent link">&para;</a></h1>
-<p>This mechanism provides secure server-to-server confirmation of in-game purchases to prevent transaction spoofing and ensure data integrity.</p>
-<p>Upon a successful payment, our server sends a Webhook Request (POST) to your endpoint. You must verify the cryptographic signature before delivering items to the player.</p>
-<h2 id="1-configuration">1. Configuration<a class="headerlink" href="#1-configuration" title="Permanent link">&para;</a></h2>
-<h4 id="to-authorize-your-server-to-receive-webhook-requests">To authorize your server to receive webhook requests:<a class="headerlink" href="#to-authorize-your-server-to-receive-webhook-requests" title="Permanent link">&para;</a></h4>
-<ol>
-<li><a href="/upload-game/admin-panel/">Open the Admin Console</a></li>
-<li>Click on the game title to open its settings</li>
-<li>Find the In-App Callback URL field
-<img alt="img" src="../images/iap-validation/1.png" /></li>
-<li>Enter your server's destination URL (e.g., https://api.yourgame.com/payments/webhook)</li>
-<li>Save Changes</li>
-</ol>
-<h2 id="2-webhook-specification">2. Webhook specification<a class="headerlink" href="#2-webhook-specification" title="Permanent link">&para;</a></h2>
-<h4 id="the-notification-is-delivered-as-an-http-post-request-transaction-details-are-passed-via-query-parameters">The notification is delivered as an HTTP POST request. Transaction details are passed via query parameters.<a class="headerlink" href="#the-notification-is-delivered-as-an-http-post-request-transaction-details-are-passed-via-query-parameters" title="Permanent link">&para;</a></h4>
+<h1 id="promo-codes">Promo codes<a class="headerlink" href="#promo-codes" title="Permanent link">&para;</a></h1>
+<p>Portal can launch your game with a Battle Pass promo code. The SDK extracts the code from the launch link and passes it to your game. You decide which reward each promo code grants and implement it in your game.</p>
+<h2 id="how-it-works">How it works<a class="headerlink" href="#how-it-works" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
-<th style="text-align: left;"><strong>Parameter</strong></th>
-<th style="text-align: center;"><strong>Description</strong></th>
+<th style="text-align: left;"></th>
+<th style="text-align: left;">Web</th>
+<th style="text-align: left;">Telegram</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;"><code>item_id</code></td>
-<td style="text-align: center;">Unique ID of the purchased item</td>
+<td style="text-align: left;">Where the code comes from</td>
+<td style="text-align: left;"><code>__portal_promo_code</code> URL parameter</td>
+<td style="text-align: left;"><code>start_param</code> in Telegram <code>initData</code></td>
 </tr>
 <tr>
-<td style="text-align: left;"><code>item_name</code></td>
-<td style="text-align: center;">Name of the purchased item</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>user_id</code></td>
-<td style="text-align: center;">Unique identifier of the user</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>tx_id</code></td>
-<td style="text-align: center;">Unique transaction identifier</td>
+<td style="text-align: left;">When the SDK reads it</td>
+<td style="text-align: left;">When the SDK script loads</td>
+<td style="text-align: left;">When Telegram WebApp is ready</td>
 </tr>
 </tbody>
 </table>
-<h2 id="3-reference-implementation-go">3. Reference Implementation (Go)<a class="headerlink" href="#3-reference-implementation-go" title="Permanent link">&para;</a></h2>
-<div class="language-go highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kd">func</span><span class="w"> </span><span class="nx">validateSignature</span><span class="p">(</span><span class="nx">data</span><span class="w"> </span><span class="nx">url</span><span class="p">.</span><span class="nx">Values</span><span class="p">,</span><span class="w"> </span><span class="nx">publicKey</span><span class="w"> </span><span class="nx">ed25519</span><span class="p">.</span><span class="nx">PublicKey</span><span class="p">)</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="nx">signatureBase64</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">data</span><span class="p">.</span><span class="nx">Get</span><span class="p">(</span><span class="s">"signature"</span><span class="p">)</span>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">  </span><span class="nx">data</span><span class="p">.</span><span class="nx">Del</span><span class="p">(</span><span class="s">"signature"</span><span class="p">)</span>
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">  </span><span class="nx">pairs</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nb">make</span><span class="p">([]</span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="nb">len</span><span class="p">(</span><span class="nx">data</span><span class="p">))</span>
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="nx">k</span><span class="p">,</span><span class="w"> </span><span class="nx">v</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="k">range</span><span class="w"> </span><span class="nx">data</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="nb">len</span><span class="p">(</span><span class="nx">v</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">      </span><span class="nx">pairs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">append</span><span class="p">(</span><span class="nx">pairs</span><span class="p">,</span><span class="w"> </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Sprintf</span><span class="p">(</span><span class="s">"%s=%s"</span><span class="p">,</span><span class="w"> </span><span class="nx">k</span><span class="p">,</span><span class="w"> </span><span class="nx">v</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
-</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">    </span><span class="p">}</span>
-</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">  </span><span class="p">}</span>
-</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>
-</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">  </span><span class="nx">sort</span><span class="p">.</span><span class="nx">Strings</span><span class="p">(</span><span class="nx">pairs</span><span class="p">)</span>
-</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">  </span><span class="nx">dataString</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">strings</span><span class="p">.</span><span class="nx">Join</span><span class="p">(</span><span class="nx">pairs</span><span class="p">,</span><span class="w"> </span><span class="s">"\n"</span><span class="p">)</span>
-</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>
-</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="w">  </span><span class="nx">signature</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">base64</span><span class="p">.</span><span class="nx">RawURLEncoding</span><span class="p">.</span><span class="nx">DecodeString</span><span class="p">(</span><span class="nx">signatureBase64</span><span class="p">)</span>
-</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">nil</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="kc">false</span>
-</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="w">  </span><span class="p">}</span>
-</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>
-</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nx">ed25519</span><span class="p">.</span><span class="nx">Verify</span><span class="p">(</span><span class="nx">publicKey</span><span class="p">,</span><span class="w"> </span><span class="p">[]</span><span class="kt">byte</span><span class="p">(</span><span class="nx">dataString</span><span class="p">),</span><span class="w"> </span><span class="nx">signature</span><span class="p">)</span>
-</span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a><span class="p">}</span>
+<p>A valid code is 1–128 characters: <code>A–Z</code>, <code>a–z</code>, <code>0–9</code>, <code>_</code>, <code>-</code>. If there is no code or it is invalid, the SDK returns <code>null</code> (<code>nil</code> in Lua).</p>
+<p>The method:</p>
+<ul>
+<li>works the same on Web and Telegram;</li>
+<li>can be called before the SDK is initialized;</li>
+<li>returns the same value on every call.</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Do not read the code from <code>location.search</code>: on Web the SDK removes <code>__portal_promo_code</code> from the URL on load. Always use the SDK method.</p>
+</div>
+<h2 id="integration">Integration<a class="headerlink" href="#integration" title="Permanent link">&para;</a></h2>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="javascript" name="__tabbed_1" type="radio" /><input id="unity" name="__tabbed_1" type="radio" /><input id="defold" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="javascript">JavaScript</label><label for="unity">Unity</label><label for="defold">Defold</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>Add this to your game's startup code (an <code>async</code> function, next to the <a href="/setup/0-javascript/">SDK initialization</a>):</p>
+<div class="language-JS highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">promoCode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nb">window</span><span class="p">.</span><span class="nx">PortalSDK</span><span class="p">.</span><span class="nx">getPromoCode</span><span class="p">();</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">promoCode</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">  </span><span class="nx">grantPromoReward</span><span class="p">(</span><span class="nx">promoCode</span><span class="p">);</span><span class="w"> </span><span class="c1">// your function</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="p">}</span>
 </span></code></pre></div>
-<p><code>publicKey = BqaLruQ7mr8W1fLQudycM3AiVb6LOvyBOEm6Wy3sKS8=</code></p>
-<p><em>The request parameters will look similar to this:</em>
-<code>item_id=235&amp;item_name=Common+lootbox&amp;signature=gNw...-Dg&amp;tg_id=122374628'</code></p>
+<p><strong>Signature:</strong> <code>window.PortalSDK.getPromoCode(): Promise&lt;string | null&gt;</code></p>
+</div>
+<div class="tabbed-block">
+<p>Add this to the <code>Start()</code> method of a script on a GameObject in your <strong>first scene</strong> (for example, your game bootstrap script). Make <code>Start()</code> <code>async</code>:</p>
+<div class="language-C# highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">using</span><span class="w"> </span><span class="nn">Orbit</span><span class="p">;</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="k">using</span><span class="w"> </span><span class="nn">UnityEngine</span><span class="p">;</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">GameBootstrap</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">MonoBehaviour</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="p">{</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">    </span><span class="k">async</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Start</span><span class="p">()</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">    </span><span class="p">{</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">        </span><span class="kt">string</span><span class="w"> </span><span class="n">promoCode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="n">PortalSDK</span><span class="p">.</span><span class="n">GetPromoCode</span><span class="p">();</span>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">promoCode</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="k">null</span><span class="p">)</span>
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="w">        </span><span class="p">{</span>
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="w">            </span><span class="n">GrantPromoReward</span><span class="p">(</span><span class="n">promoCode</span><span class="p">);</span><span class="w"> </span><span class="c1">// your method</span>
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="p">}</span>
+</span></code></pre></div>
+<p><strong>Signature:</strong> <code>Task&lt;string&gt; PortalSDK.GetPromoCode()</code> — returns <code>null</code> if there is no code.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Do not use <code>PortalSDK.GetStartParam()</code> for promo codes: for promo links it returns the encoded <code>startapp</code> value, not the code.</p>
+</div>
+</div>
+<div class="tabbed-block">
+<p>Add this to the <code>init(self)</code> function of a script (<code>.script</code>) attached to a game object in your <strong>bootstrap collection</strong> (the collection set in <code>game.project</code> → <code>bootstrap</code> → <code>main_collection</code>):</p>
+<div class="language-LUA highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kr">function</span><span class="w"> </span><span class="nf">init</span><span class="p">(</span><span class="nv">self</span><span class="p">)</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">    </span><span class="nv">portalsdk</span><span class="p">.</span><span class="nf">get_promo_code</span><span class="p">(</span><span class="kr">function</span><span class="p">(</span><span class="nv">self</span><span class="p">,</span><span class="w"> </span><span class="nv">promo_code</span><span class="p">)</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">        </span><span class="kr">if</span><span class="w"> </span><span class="nv">promo_code</span><span class="w"> </span><span class="kr">then</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">            </span><span class="nf">grant_promo_reward</span><span class="p">(</span><span class="nv">promo_code</span><span class="p">)</span><span class="w"> </span><span class="c1">-- your function</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">        </span><span class="kr">end</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">    </span><span class="kr">end</span><span class="p">)</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="kr">end</span>
+</span></code></pre></div>
+<p><strong>Signature:</strong> <code>portalsdk.get_promo_code(callback)</code> — the callback receives <code>(self, promo_code)</code>, where <code>promo_code</code> is <code>nil</code> if there is no code.</p>
+</div>
+</div>
+</div>
+<h2 id="testing">Testing<a class="headerlink" href="#testing" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Check</th>
+<th style="text-align: left;">Expected result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Open <code>https://&lt;game-url&gt;/?__portal_promo_code=TEST_CODE</code></td>
+<td style="text-align: left;">The method returns <code>"TEST_CODE"</code>, the parameter is gone from the URL</td>
+</tr>
+<tr>
+<td style="text-align: left;">Launch without a code</td>
+<td style="text-align: left;">The method returns <code>null</code> / <code>nil</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">Invalid code (<code>?__portal_promo_code=bad code!</code>)</td>
+<td style="text-align: left;">The method returns <code>null</code> / <code>nil</code></td>
+</tr>
+</tbody>
+</table>
 
 
 

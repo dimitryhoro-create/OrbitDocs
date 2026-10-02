@@ -53,10 +53,12 @@ You can also pass configuration options to control SDK behavior:
 
 === "JavaScript"
 ```JS
-await window.PortalSDK.initialize(undefined, {
+await window.PortalSDK.initialize(34398689, {
   disable_startup_ads: true,
 });
 ```
+The first parameter is your game's `botId` and is required - never pass `undefined` there. Replace `34398689` with your own bot ID, see [How to find your game bot ID](/integration/telegram-botid/).
+
 **Configuration Options:**
 
 - `disable_startup_ads` - When set to `true`, prevents ads from automatically displaying at game startup. Useful for games that want full control over when ads are shown.

@@ -994,6 +994,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../integration/promo-codes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Promo codes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../integration/safe-area-guide/" class="md-nav__link">
         
   
@@ -1316,7 +1344,7 @@
 <div class="tabbed-block"></div>
 </div>
 </div>
-<div class="language-HTML highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://sdk.portalapp.games/sdk.umd.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<div class="language-HTML highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">"https://sdk.portalapp.games/sdk.umd.js"</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
 </span></code></pre></div>
 <h4 id="2-initialize-the-sdk">2. Initialize the SDK<a class="headerlink" href="#2-initialize-the-sdk" title="Permanent link">&para;</a></h4>
 <p>Call the initialization functions at the start of your application:</p>
@@ -1325,10 +1353,10 @@
 <div class="tabbed-block"></div>
 </div>
 </div>
-<div class="language-JS highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">await</span><span class="w"> </span><span class="nb">window</span><span class="p">.</span><span class="nx">PortalSDK</span><span class="p">.</span><span class="nx">initialize</span><span class="p">();</span>
+<div class="language-JS highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">await</span><span class="w"> </span><span class="nb">window</span><span class="p">.</span><span class="nx">PortalSDK</span><span class="p">.</span><span class="nx">initialize</span><span class="p">(</span><span class="mf">34398689</span><span class="p">);</span>
 </span></code></pre></div>
 <h4 id="21-bot-id-parameter">2.1. Bot ID Parameter<a class="headerlink" href="#21-bot-id-parameter" title="Permanent link">&para;</a></h4>
-<p>The <code>initialize()</code> method also accepts a <code>botId</code> as the first parameter:</p>
+<p>The <code>initialize()</code> method takes your game's <code>botId</code> as the first parameter:</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="3:1"><input checked="checked" id="javascript_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="javascript_2">JavaScript</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block"></div>
@@ -1336,9 +1364,10 @@
 </div>
 <div class="language-JS highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">await</span><span class="w"> </span><span class="nb">window</span><span class="p">.</span><span class="nx">PortalSDK</span><span class="p">.</span><span class="nx">initialize</span><span class="p">(</span><span class="mf">34398689</span><span class="p">);</span>
 </span></code></pre></div>
-<p><strong>When do you need to specify botId?</strong></p>
-<p>The <code>botId</code> parameter is <strong>not necessary</strong> if you're using our <a href="/upload-game/0-upload-game/">hosting and upload process</a>. However, if you're hosting the game on your own server (which we don't recommend), you <strong>must</strong> add the <code>botId</code> parameter - it's important for authentication.</p>
-<p>To find your game's bot ID, see <a href="/integration/telegram-botid/">How to find your game bot ID</a>.</p>
+<p><strong>The botId is required.</strong></p>
+<p>Pass it on our <a href="/upload-game/0-upload-game/">hosting</a> and on any other host - the hosting does not supply it for you. Without it we cannot verify who is calling, so every ad request your game makes stays unverified.</p>
+<p>The <code>botId</code> is the numeric ID of the Telegram bot your game runs under. It is <strong>not</strong> <code>window.game_id</code>, which is the Admin Console game ID the SDK uses as the ad zone - these are different numbers, and one does not stand in for the other.</p>
+<p>Replace <code>34398689</code> with your own bot ID. To find it, see <a href="/integration/telegram-botid/">How to find your game bot ID</a>.</p>
 <h4 id="22-initialize-overlay">2.2. Initialize Overlay<a class="headerlink" href="#22-initialize-overlay" title="Permanent link">&para;</a></h4>
 <p>Initialize overlay with default options or with <a href="/integration/startup-configuration/">startup configuration</a>:</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="4:1"><input checked="checked" id="javascript_3" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="javascript_3">JavaScript</label></div>
@@ -1346,8 +1375,9 @@
 <div class="tabbed-block"></div>
 </div>
 </div>
-<div class="language-JS highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nb">window</span><span class="p">.</span><span class="nx">PortalSDK</span><span class="p">.</span><span class="nx">initializeOverlay</span><span class="p">();</span>
+<div class="language-JS highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nb">window</span><span class="p">.</span><span class="nx">PortalSDK</span><span class="p">.</span><span class="nx">initializeOverlay</span><span class="p">({</span><span class="w"> </span><span class="nx">botId</span><span class="o">:</span><span class="w"> </span><span class="mf">34398689</span><span class="w"> </span><span class="p">});</span>
 </span></code></pre></div>
+<p>Pass the <strong>same</strong> <code>botId</code> you passed to <code>initialize()</code>. Two different IDs is a conflict that stops ad delivery altogether - worse than passing none.</p>
 <h4 id="3-call-game-ready-event">3. Call game-ready event<a class="headerlink" href="#3-call-game-ready-event" title="Permanent link">&para;</a></h4>
 <p>Call this method when the game is ready and visible to the user.  </p>
 <div class="tabbed-set tabbed-alternate" data-tabs="5:1"><input checked="checked" id="javascript_4" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="javascript_4">JavaScript</label></div>
