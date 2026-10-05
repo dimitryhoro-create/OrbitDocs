@@ -1026,6 +1026,23 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Testing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#testing-in-telegram" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Testing in Telegram
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -1356,6 +1373,23 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Testing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#testing-in-telegram" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Testing in Telegram
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -1490,6 +1524,29 @@
 </tr>
 </tbody>
 </table>
+<h3 id="testing-in-telegram">Testing in Telegram<a class="headerlink" href="#testing-in-telegram" title="Permanent link">&para;</a></h3>
+<p><code>startapp</code> is a parameter of a Telegram Mini App link. Telegram passes its value to the game as <code>start_param</code> in <code>initData</code>, where the SDK reads the promo code. <code>startapp</code> accepts only <code>A–Z</code>, <code>a–z</code>, <code>0–9</code>, <code>_</code>, <code>-</code>, so the promo parameter is encoded with base64url.</p>
+<ol>
+<li>
+<p>Encode <code>?__portal_promo_code=&lt;code&gt;</code> with <strong>base64url</strong> — run in a browser console:</p>
+<div class="language-JS highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nx">btoa</span><span class="p">(</span><span class="s2">"?__portal_promo_code=TEST_CODE"</span><span class="p">).</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/\+/g</span><span class="p">,</span><span class="w"> </span><span class="s2">"-"</span><span class="p">).</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/\//g</span><span class="p">,</span><span class="w"> </span><span class="s2">"_"</span><span class="p">).</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/=+$/</span><span class="p">,</span><span class="w"> </span><span class="s2">""</span><span class="p">);</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="c1">// P19fcG9ydGFsX3Byb21vX2NvZGU9VEVTVF9DT0RF</span>
+</span></code></pre></div>
+</li>
+<li>
+<p>Put the result into <code>startapp</code>:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>https://t.me/&lt;bot_username&gt;/&lt;app_name&gt;?startapp=P19fcG9ydGFsX3Byb21vX2NvZGU9VEVTVF9DT0RF
+</span></code></pre></div>
+</li>
+<li>
+<p>Open the link in Telegram. If the Mini App is already open, close it first: otherwise Telegram may restore the running app without reloading it, and the SDK returns the code from the previous launch.</p>
+</li>
+<li>Check that the method returns <code>"TEST_CODE"</code>.</li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>An unencoded code (<code>?startapp=TEST_CODE</code>) is ignored.</p>
+</div>
 
 
 
