@@ -86,3 +86,26 @@ The method:
 | Open `https://<game-url>/?__portal_promo_code=TEST_CODE` | The method returns `"TEST_CODE"`, the parameter is gone from the URL |
 | Launch without a code | The method returns `null` / `nil` |
 | Invalid code (`?__portal_promo_code=bad code!`) | The method returns `null` / `nil` |
+
+### Testing in Telegram
+
+`startapp` is a parameter of a Telegram Mini App link. Telegram passes its value to the game as `start_param` in `initData`, where the SDK reads the promo code. `startapp` accepts only `A–Z`, `a–z`, `0–9`, `_`, `-`, so the promo parameter is encoded with base64url.
+
+1. Encode `?__portal_promo_code=<code>` with **base64url** — run in a browser console:
+
+    ```JS
+    btoa("?__portal_promo_code=TEST_CODE").replace(/\+/g, "-").replace(/\//g, "_").replace(/=+$/, "");
+    // P19fcG9ydGFsX3Byb21vX2NvZGU9VEVTVF9DT0RF
+    ```
+
+2. Put the result into `startapp`:
+
+    ```
+    https://t.me/<bot_username>/<app_name>?startapp=P19fcG9ydGFsX3Byb21vX2NvZGU9VEVTVF9DT0RF
+    ```
+
+3. Open the link in Telegram. If the Mini App is already open, close it first: otherwise Telegram may restore the running app without reloading it, and the SDK returns the code from the previous launch.
+4. Check that the method returns `"TEST_CODE"`.
+
+!!! note
+    An unencoded code (`?startapp=TEST_CODE`) is ignored.
