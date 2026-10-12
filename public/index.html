@@ -71,25 +71,195 @@
 
     
     
+  
 
-  <!-- Extra style sheets (can't be set in mkdocs.yml due to content hash) -->
+  <!-- Portal Games theme (text uses the system app font) -->
   <link
     rel="stylesheet"
-    href="assets/stylesheets/custom.css"
+    href="assets/stylesheets/portal.css"
   />
 
-  <!-- Text uses the system app font (see portal.css); JetBrains Mono for code -->
+  <!-- JetBrains Mono for code: loaded without blocking the first paint -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
     rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap"
+    media="print"
+    onload="this.media='all'"
   />
-  <link
-    rel="stylesheet"
-    href="assets/stylesheets/portal.css"
-  />
+  <noscript>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap"
+    />
+  </noscript>
   <meta name="theme-color" content="#4b0577" />
+
+
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      overflow: hidden;
+    }
+
+    /* Application header should be static for the landing page */
+    .md-header {
+      position: initial;
+    }
+
+    /* Remove spacing, as we cannot hide it completely */
+    .md-main__inner {
+      margin: 0;
+    }
+
+    /* Hide main content for now */
+    .md-content {
+      display: none;
+    }
+
+    /* Hide table of contents */
+    @media screen and (min-width: 60em) {
+      .md-sidebar--secondary {
+        display: none;
+      }
+    }
+
+    /* Custom page background (#4B0577 -> #27013E -> #0A0512) */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -2;
+      background: linear-gradient(180deg, #4b0577 0%, #27013e 55%, #0a0512 100%);
+      pointer-events: none;
+    }
+
+    /* Mascot art on the right, fading into the background on the left */
+    body::after {
+      content: "";
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: min(64vw, 115vh);
+      z-index: -1;
+      background: url('assets/images/home-mascot.jpg') no-repeat center center;
+      background-size: cover;
+      -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 38%);
+      mask-image: linear-gradient(to right, transparent 0%, #000 38%);
+      pointer-events: none;
+    }
+
+    .mdx-container {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      padding-top: 0;
+    }
+
+    /* The grid is a flex item: without a width it shrinks to the text width */
+    .mdx-container .md-grid {
+      width: 100%;
+    }
+
+    .mdx-hero {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+      min-height: calc(100vh - 9rem);
+      max-width: 30rem;
+      margin: 0;
+    }
+
+    /* Hide navigation */
+    @media screen and (min-width: 76.25em) {
+      .md-sidebar--primary {
+        display: none;
+      }
+    }
+
+    .md-typeset .mdx-hero__logo {
+      width: 96px;
+      height: 96px;
+      margin-bottom: 24px;
+      border-radius: 50%;
+      box-shadow: 0 0 0 5px rgba(165, 222, 66, 0.9), 0 12px 40px rgba(104, 40, 182, 0.6);
+    }
+
+    .mdx-hero__header h1 {
+      margin: 0 0 20px;
+      font-size: 2.6rem;
+      font-weight: 800;
+      line-height: 1.15;
+      color: #ffffff;
+    }
+
+    .mdx-hero__content p {
+      margin: 0;
+      font-size: 0.95rem;
+      color: rgba(255, 255, 255, 0.8);
+    }
+
+    .mdx-hero__content .md-button {
+      margin-top: 28px;
+      min-width: 260px;
+      font-size: 0.9rem;
+    }
+
+    /* Desktop: narrow text column, lifted above the bottom edge */
+    @media screen and (min-width: 60em) {
+      .mdx-hero__content {
+        margin-top: 3.5rem;
+        max-width: 19rem;
+        padding-bottom: 14vw;
+      }
+    }
+
+    /* Tablets and phones: the art fills the screen, darkened under the text */
+    @media screen and (max-width: 59.9375em) {
+      body::after {
+        width: 100%;
+        -webkit-mask-image: none;
+        mask-image: none;
+        opacity: 0.45;
+      }
+
+      .mdx-hero {
+        max-width: none;
+        align-items: center;
+        text-align: center;
+        box-sizing: border-box;
+        padding: 0 0.8rem;
+      }
+
+      .mdx-hero__header,
+      .mdx-hero__content {
+        text-align: center;
+      }
+
+      .md-typeset .mdx-hero__logo {
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+      }
+
+      .mdx-hero__header h1 {
+        font-size: 1.7rem;
+      }
+
+      .mdx-hero__content .md-button {
+        min-width: 0;
+        width: 100%;
+      }
+    }
+  </style>
 
   </head>
   
@@ -345,170 +515,12 @@
         
       
 
-  <!-- Additional styles for landing page -->
-  <style>
-    html, body {
-      height: 100%;
-      margin: 0;
-      padding: 0;
-    }
-
-    /* Application header should be static for the landing page */
-    .md-header {
-      position: initial;
-    }
-
-    /* Remove spacing, as we cannot hide it completely */
-    .md-main__inner {
-      margin: 0;
-    }
-
-    /* Hide main content for now */
-    .md-content {
-      display: none;
-    }
-
-    /* Hide table of contents */
-    @media screen and (min-width: 60em) {
-      .md-sidebar--secondary {
-        display: none;
-      }
-    }
-
-    body {
-      overflow: hidden;
-    }
-
-    /* Custom page background (#4B0577 -> #27013E -> #0A0512) */
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      z-index: -2;
-      background: linear-gradient(180deg, #4b0577 0%, #27013e 55%, #0a0512 100%);
-      pointer-events: none;
-    }
-
-    /* Mascot art on the right, fading into the background on the left */
-    body::after {
-      content: "";
-      position: fixed;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      width: min(64vw, 115vh);
-      z-index: -1;
-      background: url('assets/images/home-mascot.jpg') no-repeat center center;
-      background-size: cover;
-      -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 38%);
-      mask-image: linear-gradient(to right, transparent 0%, #000 38%);
-      pointer-events: none;
-    }
-
-    .mdx-container {
-      background: none!important;
-      height: 100vh;
-      display: flex;
-      align-items: center;
-      padding-top: 0;
-    }
-
-    /* The grid is a flex item: without a width it shrinks to the text width */
-    .mdx-container .md-grid {
-      width: 100%;
-    }
-
-    .mdx-hero {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      justify-content: center;
-      min-height: calc(100vh - 9rem);
-      max-width: 30rem;
-      margin: 0!important;
-    }
-
-    /* Hide navigation */
-    @media screen and (min-width: 76.25em) {
-      .md-sidebar--primary {
-        display: none;
-      }
-    }
-
-    .md-typeset .mdx-hero__logo {
-      width: 96px;
-      height: 96px;
-      margin-bottom: 24px;
-      border-radius: 50%;
-      box-shadow: 0 0 0 5px rgba(165, 222, 66, 0.9), 0 12px 40px rgba(104, 40, 182, 0.6);
-    }
-
-    .mdx-hero__header h1 {
-      margin: 0 0 20px;
-      font-size: 2.6rem;
-      font-weight: 800;
-      line-height: 1.15;
-      color: #ffffff;
-    }
-
-    .mdx-hero__content p {
-      margin: 0;
-      font-size: 0.95rem;
-      color: rgba(255, 255, 255, 0.8);
-    }
-
-    .mdx-hero__content .md-button {
-      margin-top: 28px;
-      min-width: 260px;
-      font-size: 0.9rem;
-    }
-
-    /* Tablets and phones: the art fills the screen, darkened under the text */
-    @media screen and (max-width: 59.9375em) {
-      body::after {
-        width: 100%;
-        -webkit-mask-image: none;
-        mask-image: none;
-        opacity: 0.45;
-      }
-
-      .mdx-hero {
-        max-width: none;
-        align-items: center;
-        text-align: center;
-        box-sizing: border-box;
-        padding: 0 0.8rem;
-      }
-
-      .mdx-hero__header,
-      .mdx-hero__content {
-        text-align: center;
-      }
-
-      .md-typeset .mdx-hero__logo {
-        margin-left: auto;
-        margin-right: auto;
-        display: block;
-      }
-
-      .mdx-hero__header h1 {
-        font-size: 1.7rem;
-      }
-
-      .mdx-hero__content .md-button {
-        min-width: 0;
-        width: 100%;
-      }
-    }
-  </style>
-  
-
   <!-- Hero for landing page -->
   <section class="mdx-container">
     <div class="md-grid md-typeset">
       <div class="mdx-hero">
         <div class="mdx-hero__header">
-          <img class="mdx-hero__logo" src="assets/images/portal-logo.png" alt="Portal Games" width="112" height="112" />
+          <img class="mdx-hero__logo" src="assets/images/portal-logo.png" alt="Portal Games" width="96" height="96" />
           <h1>Welcome to the Portal Games Documentation</h1>
         </div>
         <div class="mdx-hero__content">
@@ -520,13 +532,6 @@
           >
             Getting Started
           </a>
-          <!-- <a
-            href="https://w0.peakpx.com/wallpaper/348/1011/HD-wallpaper-what-a-cute-baby-pretty-tiny-cats-kitty.jpg"
-            title="Material for MkDocs Insiders"
-            class="md-button"
-          >
-            OUR CTO
-          </a> -->
         </div>
       </div>
     </div>
@@ -1475,14 +1480,8 @@
       <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.instant", "navigation.instant.prefetch", "navigation.instant.progress", "navigation.sections", "navigation.tabs", "navigation.path", "navigation.top", "search.suggest", "search.highlight", "navigation.tracking", "content.code.annotate", "content.code.copy", "content.tabs.link", "content.code.select"], "search": "assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-  
       <script src="assets/javascripts/bundle.d7400e89.min.js"></script>
       
     
-
-  <!-- Extra JavaScript (can't be set in mkdocs.yml due to content hash) -->
-  <script src="assets/javascripts/custom.js"></script>  
-
-
   </body>
 </html>

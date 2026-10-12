@@ -25,23 +25,27 @@
 <!-- Custom front matter -->
 {% block extrahead %}
 
-  <!-- Extra style sheets (can't be set in mkdocs.yml due to content hash) -->
+  <!-- Portal Games theme (text uses the system app font) -->
   <link
     rel="stylesheet"
-    href="{{ 'assets/stylesheets/custom.css' | url }}"
+    href="{{ 'assets/stylesheets/portal.css' | url }}"
   />
 
-  <!-- Text uses the system app font (see portal.css); JetBrains Mono for code -->
+  <!-- JetBrains Mono for code: loaded without blocking the first paint -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
     rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap"
+    media="print"
+    onload="this.media='all'"
   />
-  <link
-    rel="stylesheet"
-    href="{{ 'assets/stylesheets/portal.css' | url }}"
-  />
+  <noscript>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap"
+    />
+  </noscript>
   <meta name="theme-color" content="#4b0577" />
 {% endblock %}
 
@@ -71,13 +75,4 @@
     </span>
     <strong>Telegram</strong>
   </a>
-{% endblock %}
-
-<!-- Theme-related JavaScript -->
-{% block scripts %}
-  {{ super() }}
-
-  <!-- Extra JavaScript (can't be set in mkdocs.yml due to content hash) -->
-  <script src="{{ 'assets/javascripts/custom.js' | url }}"></script>  
-
 {% endblock %}

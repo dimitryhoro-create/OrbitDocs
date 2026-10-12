@@ -99,16 +99,7 @@ body {
   --md-text-font-family: var(--pg-font);
 }
 
-/* Headings and header use the same app font */
-.md-typeset h1,
-.md-typeset h2,
-.md-typeset h3,
-.md-typeset h4,
-.md-header__title,
-.md-nav__title {
-  font-family: var(--pg-font);
-}
-
+/* Headings (they inherit the app font from body) */
 .md-typeset h1,
 .md-typeset h2,
 .md-typeset h3,
@@ -130,13 +121,9 @@ body {
   font-weight: 600;
 }
 
-/* Header: BG Brand, the same on every screen */
-.md-header,
-.md-tabs {
-  background-color: var(--pg-bg-brand);
-}
-
+/* Header and tabs: BG Brand, the same on every screen */
 .md-header {
+  background-color: var(--pg-bg-brand);
   box-shadow: none;
 }
 
@@ -159,6 +146,7 @@ body {
 }
 
 .md-tabs {
+  background-color: var(--pg-bg-brand);
   border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
 
@@ -181,6 +169,35 @@ body {
 
 .md-banner a {
   color: var(--pg-lime);
+}
+
+.md-banner strong {
+  color: #ffffff;
+  white-space: nowrap;
+}
+
+/* Social icons in round outlines */
+.md-banner .twemoji {
+  display: inline-block;
+  width: 1.2rem;
+  height: 1.2rem;
+  padding: 0.25rem;
+  border-radius: 100%;
+  box-shadow: inset 0 0 0 0.05rem currentcolor;
+  vertical-align: bottom;
+  transition: background-color 0.25s, color 0.25s;
+}
+
+.md-banner .twemoji svg {
+  display: block;
+  max-height: none;
+}
+
+.md-banner a:hover .twemoji,
+.md-banner a:focus .twemoji {
+  background-color: var(--pg-lime);
+  color: var(--pg-button-primary-text);
+  box-shadow: none;
 }
 
 /* Search: BG 3 field, interactive border on focus */

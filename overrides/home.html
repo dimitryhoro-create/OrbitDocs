@@ -1,15 +1,18 @@
 {% extends "main.html" %}
 
-<!-- Render hero under tabs -->
-{% block tabs %}
+<!-- Landing page styles go to <head>, so the page is drawn once, already styled -->
+{% block extrahead %}
   {{ super() }}
 
-  <!-- Additional styles for landing page -->
   <style>
     html, body {
       height: 100%;
       margin: 0;
       padding: 0;
+    }
+
+    body {
+      overflow: hidden;
     }
 
     /* Application header should be static for the landing page */
@@ -32,10 +35,6 @@
       .md-sidebar--secondary {
         display: none;
       }
-    }
-
-    body {
-      overflow: hidden;
     }
 
     /* Custom page background (#4B0577 -> #27013E -> #0A0512) */
@@ -65,7 +64,6 @@
     }
 
     .mdx-container {
-      background: none!important;
       height: 100vh;
       display: flex;
       align-items: center;
@@ -84,7 +82,7 @@
       justify-content: center;
       min-height: calc(100vh - 9rem);
       max-width: 30rem;
-      margin: 0!important;
+      margin: 0;
     }
 
     /* Hide navigation */
@@ -120,6 +118,15 @@
       margin-top: 28px;
       min-width: 260px;
       font-size: 0.9rem;
+    }
+
+    /* Desktop: narrow text column, lifted above the bottom edge */
+    @media screen and (min-width: 60em) {
+      .mdx-hero__content {
+        margin-top: 3.5rem;
+        max-width: 19rem;
+        padding-bottom: 14vw;
+      }
     }
 
     /* Tablets and phones: the art fills the screen, darkened under the text */
@@ -160,14 +167,18 @@
       }
     }
   </style>
-  
+{% endblock %}
+
+<!-- Render hero under tabs -->
+{% block tabs %}
+  {{ super() }}
 
   <!-- Hero for landing page -->
   <section class="mdx-container">
     <div class="md-grid md-typeset">
       <div class="mdx-hero">
         <div class="mdx-hero__header">
-          <img class="mdx-hero__logo" src="assets/images/portal-logo.png" alt="Portal Games" width="112" height="112" />
+          <img class="mdx-hero__logo" src="assets/images/portal-logo.png" alt="Portal Games" width="96" height="96" />
           <h1>Welcome to the Portal Games Documentation</h1>
         </div>
         <div class="mdx-hero__content">
@@ -179,13 +190,6 @@
           >
             Getting Started
           </a>
-          <!-- <a
-            href="{{ 'https://w0.peakpx.com/wallpaper/348/1011/HD-wallpaper-what-a-cute-baby-pretty-tiny-cats-kitty.jpg' | url }}"
-            title="Material for MkDocs Insiders"
-            class="md-button"
-          >
-            OUR CTO
-          </a> -->
         </div>
       </div>
     </div>
