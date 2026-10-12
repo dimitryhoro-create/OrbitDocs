@@ -3,7 +3,7 @@
 ### **Prerequisites**  
   To work with PortalSDK, you’ll need the following:
 
-**Unity Versions:** Unity 2022 LTS, or Unity 6 LTS (Unity 6 is preferable due to updated WebGL support).  
+**Unity Version:** Unity 2022.3 LTS (tested on 2022.3.62f3).  
 **Installed WebGL Platform:** Ensure that the WebGL Platform module is installed in your Unity setup.
 
 ### Unity WebGL Limitations
@@ -67,21 +67,15 @@ For in-depth information about optimizing and working within Unity’s WebGL pla
 
 ### Final Configuration
 
-#### 1. Set the WebGL Template
-1. Go to `Edit > Project Settings > Player in Unity`
-2. Under the **WebGL settings**, find the **WebGL Template** selector
-3. Select *PortalSDK* from the selector to apply it as your template
+Go to **Edit > Project Settings > Player** → **WebGL** tab:
+
 ![img](images/unity-games/11.png)
 
-#### 2. Mandatory Publishing Settings
+| Section | Property | Value |
+| :--- | :--- | :--- |
+| Publishing Settings | **Compression Format** | `Brotli` |
+| Publishing Settings | **Name Files As Hashes** | `True` |
 
-| Property | Required Value |
-| :--- | :--- |
-| **Compression Format** | `Brotli` |
-| **Name Files As Hashes** | `True` |
-| **Target WebAssembly 2023** | `False` |
-| **Use WebAssembly.Table** | `False` |
-| **Enable BigInt** | `False` |
 ![img](images/unity-games/12.png)
 
 ### Build and Test

@@ -44,7 +44,7 @@ You need to reset `localStorage` for that. Please refer to [how to enable dev to
 
 *Disabled fullscreen*
 
-![Enabled fullscreeen](images/startup-configuration/2.jpg)
+![Enabled fullscreen](images/startup-configuration/2.jpg)
 
 *Enabled fullscreen*
 
