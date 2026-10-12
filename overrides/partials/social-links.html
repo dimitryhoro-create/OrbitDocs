@@ -1,0 +1,6 @@
+{#- Social icon links from extra.header_social (used in the header and the mobile drawer) -#}
+{% for item in config.extra.header_social %}
+  <a href="{{ item.link }}" class="md-header__social-link" title="{{ item.name }}" aria-label="{{ item.name }}" target="_blank" rel="noopener">
+    {% include ".icons/" ~ item.icon ~ ".svg" %}
+  </a>
+{% endfor %}

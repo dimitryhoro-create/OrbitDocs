@@ -161,43 +161,55 @@ body {
   color: #ffffff;
 }
 
-/* Announcement bar */
-.md-banner {
-  background: var(--pg-purple-900);
-  color: #ffffff;
+/* Social icons in the header, before the search */
+.md-header__social {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin: 0 0.6rem;
 }
 
-.md-banner a {
-  color: var(--pg-lime);
+.md-header__social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.6rem;
+  height: 1.6rem;
+  border-radius: 50%;
+  color: rgba(255, 255, 255, 0.75);
+  box-shadow: inset 0 0 0 0.05rem rgba(255, 255, 255, 0.35);
+  transition: background-color 0.2s, color 0.2s, box-shadow 0.2s;
 }
 
-.md-banner strong {
-  color: #ffffff;
-  white-space: nowrap;
+.md-header__social-link svg {
+  width: 0.8rem;
+  height: 0.8rem;
+  fill: currentcolor;
 }
 
-/* Social icons in round outlines */
-.md-banner .twemoji {
-  display: inline-block;
-  width: 1.2rem;
-  height: 1.2rem;
-  padding: 0.25rem;
-  border-radius: 100%;
-  box-shadow: inset 0 0 0 0.05rem currentcolor;
-  vertical-align: bottom;
-  transition: background-color 0.25s, color 0.25s;
-}
-
-.md-banner .twemoji svg {
-  display: block;
-  max-height: none;
-}
-
-.md-banner a:hover .twemoji,
-.md-banner a:focus .twemoji {
+.md-header__social-link:hover,
+.md-header__social-link:focus {
   background-color: var(--pg-lime);
   color: var(--pg-button-primary-text);
   box-shadow: none;
+}
+
+/* Phones and tablets: icons move from the header into the drawer */
+.md-nav__social {
+  display: none;
+}
+
+@media screen and (max-width: 59.9375em) {
+  .md-header__social {
+    display: none;
+  }
+
+  .md-nav__social {
+    display: flex;
+    gap: 0.5rem;
+    padding: 0.6rem 0.8rem;
+    background-color: var(--pg-bg-brand);
+  }
 }
 
 /* Search: BG 3 field, interactive border on focus */
@@ -288,6 +300,11 @@ body {
   .md-nav--primary .md-nav__title {
     background: transparent;
     box-shadow: none;
+  }
+
+  /* Section title above the page list: keep a gap without the theme's shadow */
+  .md-nav--lifted > .md-nav__list > .md-nav__item--active > .md-nav__link {
+    margin-bottom: 0.5rem;
   }
 }
 

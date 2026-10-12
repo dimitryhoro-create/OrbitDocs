@@ -25,6 +25,21 @@ theme:
     scheme: slate
     primary: custom
     accent: custom
+extra:
+  # Social icons in the header, shown before the search (overrides/partials/header.html)
+  header_social:
+    - name: GitHub
+      icon: fontawesome/brands/github
+      link: https://github.com/orbit-software
+    - name: Facebook
+      icon: fontawesome/brands/facebook
+      link: https://www.facebook.com/portalgamesapp
+    - name: Instagram
+      icon: fontawesome/brands/instagram
+      link: https://www.instagram.com/portalgamesapp
+    - name: Telegram
+      icon: fontawesome/brands/telegram
+      link: https://t.me/portal_community
 plugins:
   - search
   - awesome-pages
