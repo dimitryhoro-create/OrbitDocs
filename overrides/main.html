@@ -30,6 +30,19 @@
     rel="stylesheet"
     href="{{ 'assets/stylesheets/custom.css' | url }}"
   />
+
+  <!-- Text uses the system app font (see portal.css); JetBrains Mono for code -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap"
+  />
+  <link
+    rel="stylesheet"
+    href="{{ 'assets/stylesheets/portal.css' | url }}"
+  />
+  <meta name="theme-color" content="#4b0577" />
 {% endblock %}
 
 <!-- Announcement bar -->
@@ -39,7 +52,17 @@
     <span class="twemoji github">
       {% include ".icons/fontawesome/brands/github.svg" %}
     </span>
-    <strong>GitHub</strong>
+    <strong>GitHub</strong></a>,
+  <a rel="me" href="https://www.facebook.com/portalgamesapp">
+    <span class="twemoji facebook">
+      {% include ".icons/fontawesome/brands/facebook.svg" %}
+    </span>
+    <strong>Facebook</strong></a>,
+  <a rel="me" href="https://www.instagram.com/portalgamesapp">
+    <span class="twemoji instagram">
+      {% include ".icons/fontawesome/brands/instagram.svg" %}
+    </span>
+    <strong>Instagram</strong>
   </a>
   and
   <a href="https://t.me/portal_community">

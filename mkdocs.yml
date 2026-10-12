@@ -1,11 +1,10 @@
-site_name: Orbit Platform Documentation
+site_name: Portal Games Documentation
 site_url: https://docs.portalapp.games/
 theme:
   name: material
   custom_dir: overrides
   favicon: assets/images/Pictogrammers-Material-Orbit.512.png
-  icon:
-    logo: material/orbit
+  logo: assets/images/portal-logo.png
   features:
     - navigation.instant
     - navigation.instant.prefetch
@@ -21,11 +20,11 @@ theme:
     - content.code.copy
     - content.tabs.link
     - content.code.select
-  font:
-    code: JetBrains Mono
-    text: Inter
+  font: false
   palette:
-    primary: white
+    scheme: slate
+    primary: custom
+    accent: custom
 plugins:
   - search
   - awesome-pages

@@ -15,11 +15,6 @@
     /* Application header should be static for the landing page */
     .md-header {
       position: initial;
-      background: none!important;
-    }
-
-    .md-tabs {
-      background: none!important;
     }
 
     /* Remove spacing, as we cannot hide it completely */
@@ -40,63 +35,56 @@
     }
 
     body {
-      background: url('assets/images/cosmo2.jpg') no-repeat center center;
-      background-position-y: -40%;
-      background-size: cover;
       overflow: hidden;
+    }
+
+    /* Custom page background (#4B0577 -> #27013E -> #0A0512) */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -2;
+      background: linear-gradient(180deg, #4b0577 0%, #27013e 55%, #0a0512 100%);
+      pointer-events: none;
+    }
+
+    /* Mascot art on the right, fading into the background on the left */
+    body::after {
+      content: "";
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: min(64vw, 115vh);
+      z-index: -1;
+      background: url('assets/images/home-mascot.jpg') no-repeat center center;
+      background-size: cover;
+      -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 38%);
+      mask-image: linear-gradient(to right, transparent 0%, #000 38%);
+      pointer-events: none;
     }
 
     .mdx-container {
       background: none!important;
       height: 100vh;
       display: flex;
-      align-items: flex-end;
-      justify-content: center;
-      padding-top: 0px;
+      align-items: center;
+      padding-top: 0;
+    }
+
+    /* The grid is a flex item: without a width it shrinks to the text width */
+    .mdx-container .md-grid {
+      width: 100%;
     }
 
     .mdx-hero {
       display: flex;
       flex-direction: column;
-      align-items: center;
+      align-items: flex-start;
       justify-content: center;
-      min-height: 100vh;
-      width: 100%;
-      justify-content: start;
-      padding-top: 30px;
+      min-height: calc(100vh - 9rem);
+      max-width: 30rem;
       margin: 0!important;
-    }
-
-    .md-grid {
-      /*max-width: 100%;*/
-      /*padding: 0;*/
-      /*margin: 0;*/
-    }
-
-    .mdx-hero__header h1,
-    .mdx-hero__content p {
-      text-shadow:
-              -2px -2px 4px rgba(255, 255, 255, 0.9),
-              2px -2px 4px rgba(255, 255, 255, 0.9),
-              -2px  2px 4px rgba(255, 255, 255, 0.9),
-              2px  2px 4px rgba(255, 255, 255, 0.9),
-              0    0   18px rgba(255, 255, 255, 0.6);
-    }
-
-    .mdx-hero__header h1 {
-      margin-bottom: 24px;
-      text-align: center;
-    }
-
-    .mdx-hero__image img {
-      display: block;
-      margin: 0 auto;
-      max-width: 90vw;
-      height: auto;
-    }
-
-    .mdx-hero__content {
-      text-align: center;
     }
 
     /* Hide navigation */
@@ -106,24 +94,70 @@
       }
     }
 
+    .md-typeset .mdx-hero__logo {
+      width: 96px;
+      height: 96px;
+      margin-bottom: 24px;
+      border-radius: 50%;
+      box-shadow: 0 0 0 5px rgba(165, 222, 66, 0.9), 0 12px 40px rgba(104, 40, 182, 0.6);
+    }
+
+    .mdx-hero__header h1 {
+      margin: 0 0 20px;
+      font-size: 2.6rem;
+      font-weight: 800;
+      line-height: 1.15;
+      color: #ffffff;
+    }
+
+    .mdx-hero__content p {
+      margin: 0;
+      font-size: 0.95rem;
+      color: rgba(255, 255, 255, 0.8);
+    }
+
     .mdx-hero__content .md-button {
-      background: #FFD700;   
-      color: #222;              
-      border: 2px solid #FFD700;
-      border-radius: 8px;       
-      font-weight: bold;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-      transition: background 0.2s, color 0.2s;
+      margin-top: 28px;
+      min-width: 260px;
+      font-size: 0.9rem;
     }
 
-    .mdx-hero__content .md-button:hover {
-      background: #fff;
-      color: #FFD700;
-      border-color: #FFD700;
-    }
+    /* Tablets and phones: the art fills the screen, darkened under the text */
+    @media screen and (max-width: 59.9375em) {
+      body::after {
+        width: 100%;
+        -webkit-mask-image: none;
+        mask-image: none;
+        opacity: 0.45;
+      }
 
-    .mdx-hero__content, .mdx-hero__content h1, .mdx-hero__content p {
-      color: #000102;
+      .mdx-hero {
+        max-width: none;
+        align-items: center;
+        text-align: center;
+        box-sizing: border-box;
+        padding: 0 0.8rem;
+      }
+
+      .mdx-hero__header,
+      .mdx-hero__content {
+        text-align: center;
+      }
+
+      .md-typeset .mdx-hero__logo {
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+      }
+
+      .mdx-hero__header h1 {
+        font-size: 1.7rem;
+      }
+
+      .mdx-hero__content .md-button {
+        min-width: 0;
+        width: 100%;
+      }
     }
   </style>
   
@@ -133,10 +167,11 @@
     <div class="md-grid md-typeset">
       <div class="mdx-hero">
         <div class="mdx-hero__header">
-          <h1>Welcome to the Orbit Platform Documentation</h1>
+          <img class="mdx-hero__logo" src="assets/images/portal-logo.png" alt="Portal Games" width="112" height="112" />
+          <h1>Welcome to the Portal Games Documentation</h1>
         </div>
         <div class="mdx-hero__content">
-          <p>Welcome to the official Orbit Platform documentation! Here, you'll find all the essential information to get started quickly with the platform.</p>
+          <p>Welcome to the official Portal Games documentation! Here, you'll find all the essential information to get started quickly with the platform.</p>
           <a
             href="introduction/"
             title="{{ page.next_page.title | e }}"
